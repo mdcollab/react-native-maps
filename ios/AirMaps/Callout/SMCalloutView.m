@@ -313,15 +313,8 @@ NSTimeInterval const kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
     CGFloat anchorX = self.calloutOffset.x + CGRectGetMidX(rect);
     CGFloat anchorY = self.calloutOffset.y + (bestDirection == SMCalloutArrowDirectionDown ? CGRectGetMinY(rect) : CGRectGetMaxY(rect));
 
-    // we prefer to sit centered directly above our anchor
+    // sit centered directly above our anchor
     CGFloat calloutX = roundf(anchorX - self.frameWidth / 2);
-
-    // but not if it's going to get too close to the edge of our constraints
-    // if (calloutX < constrainedRect.origin.x)
-    //     calloutX = constrainedRect.origin.x;
-
-    // if (calloutX > constrainedRect.origin.x+constrainedRect.size.width-self.frameWidth)
-    //     calloutX = constrainedRect.origin.x+constrainedRect.size.width-self.frameWidth;
 
     // what's the farthest to the left and right that we could point to, given our background image constraints?
     CGFloat minPointX = calloutX + self.backgroundView.anchorMargin;
