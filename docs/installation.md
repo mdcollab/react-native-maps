@@ -43,18 +43,18 @@ To install using Cocoapods, simply insert the following line into your `Podfile`
 1. in `android/app/build.gradle` add:
    ```
    ...
-     dependencies {
+   dependencies {
      ...
-    compile 'com.airbnb.android:react-native-maps:0.6.0' // <-- Add this!
-    }
+     compile project(':react-native-maps') // <-- Add this!
+   }
    ```
 
 2. in `android/settings.gradle` add:
-```
-include ':react-native-maps'
-project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android')
+   ```
+   include ':react-native-maps'
+   project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/android/lib')
 
-```
+   ```
 
 
 3. in `android/app/src/main/java/com/{YOUR_APP_NAME}/MainActivity.java` add:
@@ -70,7 +70,7 @@ project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                 new MainReactPackage(),
-                new MapsPackage(this)    // <-- Add this!
+                new MapsPackage()    // <-- Add this!
             );
         }
    }
@@ -88,7 +88,7 @@ project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../
                .setBundleAssetName("index.android.bundle")
                .setJSMainModuleName("index.android")
                .addPackage(new MainReactPackage())
-               .addPackage(new MapsPackage(this)) // <---- and This!
+               .addPackage(new MapsPackage()) // <---- and This!
                .setUseDeveloperSupport(BuildConfig.DEBUG)
                .setInitialLifecycleState(LifecycleState.RESUMED)
                .build();
