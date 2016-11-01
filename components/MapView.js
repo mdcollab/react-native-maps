@@ -397,10 +397,6 @@ var MapView = React.createClass({
     this._runCommand('fitToElements', [animated]);
   },
 
-  fitToSuppliedMarkers: function(markers, animated) {
-    this._runCommand('fitToSuppliedMarkers', [markers, animated]);
-  },
-
   takeSnapshot: function (width, height, region, callback) {
     if (!region) {
       region = this.props.region || this.props.initialRegion;
@@ -449,7 +445,6 @@ var MapView = React.createClass({
       props.handlePanDrag = !!props.onPanDrag;
     } else {
       props = {
-        style: this.props.style,
         region: null,
         initialRegion: null,
         onChange: this._onChange,
