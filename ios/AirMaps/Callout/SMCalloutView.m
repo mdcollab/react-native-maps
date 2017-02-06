@@ -500,7 +500,7 @@ NSTimeInterval const kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
     [animation setValue:@(presenting) forKey:@"presenting"];
 
     animation.fillMode = kCAFillModeForwards;
-    animation.removedOnCompletion = NO;
+    animation.removedOnCompletion = YES;
     return animation;
 }
 
