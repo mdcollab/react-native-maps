@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   View,
+  ViewPropTypes,
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -10,7 +11,7 @@ import decorateMapComponent, {
 } from './decorateMapComponent';
 
 const propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
   tooltip: PropTypes.bool,
   onPress: PropTypes.func,
 };

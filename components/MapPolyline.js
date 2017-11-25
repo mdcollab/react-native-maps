@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   View,
+  ViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import decorateMapComponent, {
@@ -9,7 +10,7 @@ import decorateMapComponent, {
 } from './decorateMapComponent';
 
 const propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
 
   /**
    * An array of coordinates to describe the polygon

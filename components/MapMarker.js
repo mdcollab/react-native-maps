@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   View,
+  ViewPropTypes,
   StyleSheet,
   Platform,
   NativeModules,
@@ -23,7 +24,7 @@ const viewConfig = {
 };
 
 const propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
 
   // TODO(lmr): get rid of these?
   identifier: PropTypes.string,

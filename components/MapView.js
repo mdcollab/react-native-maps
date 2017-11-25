@@ -3,6 +3,7 @@ import {
   EdgeInsetsPropType,
   Platform,
   View,
+  ViewPropTypes,
   Animated,
   requireNativeComponent,
   NativeModules,
@@ -46,7 +47,7 @@ const viewConfig = {
 };
 
 const propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
   /**
    * When provider is "google", we will use GoogleMaps.
    * Any value other than "google" will default to using
@@ -60,7 +61,7 @@ const propTypes = {
    * Used to style and layout the `MapView`.  See `StyleSheet.js` and
    * `ViewStylePropTypes.js` for more info.
    */
-  style: View.propTypes.style,
+  style: ViewPropTypes.style,
 
   /**
    * A json object that describes the style of the map. This is transformed to a string

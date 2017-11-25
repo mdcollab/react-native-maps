@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   View,
+  ViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -11,7 +12,7 @@ import decorateMapComponent, {
 } from './decorateMapComponent';
 
 const propTypes = {
-  ...View.propTypes,
+  ...ViewPropTypes,
 
   /**
    * The url template of the tile server. The patterns {x} {y} {z} will be replaced at runtime
